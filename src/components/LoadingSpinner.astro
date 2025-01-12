@@ -1,0 +1,25 @@
+---
+const { size = "10px" } = Astro.props;
+---
+
+<div id="spinner" style={`--spinner-size: ${size};`}></div>
+
+<style>
+    #spinner {
+        animation: spin 1s linear infinite;
+        border: calc(var(--spinner-size) / 2) solid #f3f3f375;
+        border-radius: 50%;
+        border-top: calc(var(--spinner-size) / 2) solid white;
+        height: var(--spinner-size);
+        width: var(--spinner-size);
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
