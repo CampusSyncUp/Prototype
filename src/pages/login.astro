@@ -8,7 +8,7 @@ import Layout from "../layouts/Layout.astro";
         <div id="logo-ets">
             <Icon icon="ets" />
         </div>
-        <form>
+        <form id="login-form">
             <input type="text" placeholder="Universal Code" />
             <input type="password" placeholder="Password" />
             <a href="/forgot-password">Forgot your password?</a>
@@ -17,6 +17,19 @@ import Layout from "../layouts/Layout.astro";
         <a>Need help?</a>
     </div>
 </Layout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("login-form");
+
+        if (form) {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                alert("Redirecting to the feed...");
+            });
+        }
+    });
+</script>
 
 <style>
     button {
