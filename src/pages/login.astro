@@ -1,0 +1,78 @@
+---
+import Icon from "../components/icon.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Login">
+    <div id="login-page">
+        <div id="logo-ets">
+            <Icon icon="ets" />
+        </div>
+        <form id="login-form">
+            <input type="text" placeholder="Universal Code" />
+            <input type="password" placeholder="Password" />
+            <a href="/forgot-password">Forgot your password?</a>
+            <button type="submit">Sign in</button>
+        </form>
+        <a>Need help?</a>
+    </div>
+</Layout>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("login-form");
+
+        if (form) {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                alert("Redirecting to the feed...");
+            });
+        }
+    });
+</script>
+
+<style>
+    button {
+        width: 100%;
+        border-radius: 15px;
+        border: none;
+        height: 3rem;
+        background-color: #ffffff90;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    input {
+        box-sizing: border-box;
+        width: 90vw;
+        padding: 1rem;
+        border: 1px solid var(--font-color);
+        border-radius: 0.5rem;
+        background-color: transparent;
+        color: var(--text-color);
+    }
+
+    #login-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #logo-ets {
+        display: flex;
+        justify-content: center;
+        width: 50vw;
+        height: 50vw;
+    }
+
+    /* Pseudo classes */
+    input:focus {
+        border-width: 2px;
+    }
+</style>

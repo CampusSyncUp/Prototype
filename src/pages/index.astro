@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Icon from "../components/icon.astro";
+import Layout from "../layouts/Layout.astro";
+import LoadingSpinner from "../components/LoadingSpinner.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Welcome to TindÉTS">
+    <div id="loading-screen">
+        <div id="logo-ets">
+            <Icon icon="ets" />
+        </div>
+        <LoadingSpinner size="10vw" />
+    </div>
+    <script>
+        // Redirect to login page after 1 second to simulate a loading screen
+        setTimeout(() => {
+            window.location.href = "/login";
+        }, 1000);
+    </script>
 </Layout>
+
+<style>
+    #loading-screen {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
+    }
+
+    #logo-ets {
+        width: 100vw;
+        height: 100vw;
+    }
+</style>

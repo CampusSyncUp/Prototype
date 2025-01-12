@@ -1,0 +1,22 @@
+:root {
+    --background-color: #e3022c;
+    --font-color: #fefefe;
+}
+
+* {
+    color: var(--font-color);
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    transition-duration: .5s;
+}
+
+body {
+    align-items: center;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    width: 100%;
+}
