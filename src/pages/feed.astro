@@ -1,6 +1,28 @@
 ---
-import Icon from "../components/icon.astro";
+import Icon from "../components/Icon.astro";
+import Post from "../components/Post.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+const components = [
+    {
+        title: "This is a post",
+        description: "This is the prototype for the feed.",
+    },
+    {
+        title: "This is another post",
+        description: "The feed will be like LinkedIn's feed.",
+        date: "2021-10-02",
+    },
+    {
+        title: "This is a third post",
+        description: "Users will share their projects, thoughts, and more.",
+        date: "2021-10-03",
+    },
+    {
+        title: "This is a fourth post",
+        description: "Users will be able to like, comment, and share posts.",
+    },
+];
 ---
 
 <MainLayout title="Feed">
@@ -11,7 +33,17 @@ import MainLayout from "../layouts/MainLayout.astro";
             <span><Icon icon="message" /></span>
         </div>
     </nav>
-    <div id="feed-content"></div>
+    <div id="feed-content">
+        {
+            components.map((component) => (
+                <Post
+                    title={component.title}
+                    description={component.description}
+                    date={component.date}
+                />
+            ))
+        }
+    </div>
 </MainLayout>
 
 <style>

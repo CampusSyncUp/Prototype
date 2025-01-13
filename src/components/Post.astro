@@ -1,0 +1,83 @@
+---
+import Icon from "./Icon.astro";
+
+export interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props as Props;
+
+const randomMinutes = Math.floor(Math.random() * 60);
+const randomHours = Math.floor(Math.random() * 24);
+const randomDays = Math.floor(Math.random() * 7);
+
+const now = new Date();
+now.setMinutes(now.getMinutes() - randomMinutes);
+now.setHours(now.getHours() - randomHours);
+now.setDate(now.getDate() - randomDays);
+
+const formattedDate = now.toLocaleString();
+---
+
+<Fragment>
+    <article>
+        <div>
+            <img src="https://thispersondoesnotexist.com/" alt="Author" />
+            <figcaption>Username</figcaption>
+        </div>
+        <div>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <a href="#">Read more</a>
+            <img src="https://picsum.photos/200" alt="" />
+        </div>
+        <time>{formattedDate}</time>
+        <div>
+            <span>Like</span>
+            <span>Comment</span>
+            <span>Repost</span>
+            <span>Send</span>
+        </div>
+    </article>
+</Fragment>
+
+<style>
+    * {
+        color: black;
+    }
+
+    article {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0.5rem;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    article > div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    article > div:first-child > img {
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    article > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    article > div:last-child {
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
