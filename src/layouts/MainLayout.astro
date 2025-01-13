@@ -1,0 +1,74 @@
+---
+import Icon from "../components/icon.astro";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/ets.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <main>
+            <slot />
+        </main>
+        <nav>
+            <ul>
+                <li>
+                    <a href="feed.html" title="Feed">
+                        <Icon icon="feed" />
+                    </a>
+                </li>
+                <li>
+                    <a href="search.html" title="Search">
+                        <Icon icon="search" />
+                    </a>
+                </li>
+                <li>
+                    <a href="post.html" title="Post">
+                        <Icon icon="copy-plus" />
+                    </a>
+                </li>
+                <li>
+                    <a href="matches.html" title="Matches">
+                        <Icon icon="heart-handshake" />
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" title="Profile">
+                        <Icon icon="user-circle" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </body>
+</html>
+
+<style>
+    main {
+        background-color: var(--font-color);
+        flex: 1;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav > ul {
+        background-color: var(--font-color);
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav > ul > li {
+        display: inline;
+    }
+</style>

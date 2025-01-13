@@ -1,9 +1,9 @@
 ---
 import Icon from "../components/icon.astro";
-import Layout from "../layouts/Layout.astro";
+import MenuLayout from "../layouts/MenuLayout.astro";
 ---
 
-<Layout title="Login">
+<MenuLayout title="Login">
     <div id="login-page">
         <div id="logo-ets">
             <Icon icon="ets" />
@@ -16,19 +16,17 @@ import Layout from "../layouts/Layout.astro";
         </form>
         <a>Need help?</a>
     </div>
-</Layout>
+</MenuLayout>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("login-form");
+    const form = document.getElementById("login-form");
 
-        if (form) {
-            form.addEventListener("submit", (event) => {
-                event.preventDefault();
-                alert("Redirecting to the feed...");
-            });
-        }
-    });
+    if (form) {
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            window.location.href = "feed.html";
+        });
+    }
 </script>
 
 <style>
@@ -48,7 +46,6 @@ import Layout from "../layouts/Layout.astro";
     }
 
     input {
-        box-sizing: border-box;
         width: 90vw;
         padding: 1rem;
         border: 1px solid var(--font-color);
