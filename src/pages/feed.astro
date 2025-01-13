@@ -1,0 +1,86 @@
+---
+import Icon from "../components/Icon.astro";
+import Post from "../components/Post.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+const components = [
+    {
+        title: "This is a post",
+        description: "This is the prototype for the feed.",
+    },
+    {
+        title: "This is another post",
+        description: "The feed will be like LinkedIn's feed.",
+        date: "2021-10-02",
+    },
+    {
+        title: "This is a third post",
+        description: "Users will share their projects, thoughts, and more.",
+        date: "2021-10-03",
+    },
+    {
+        title: "This is a fourth post",
+        description: "Users will be able to like, comment, and share posts.",
+    },
+];
+---
+
+<MainLayout title="Feed">
+    <nav>
+        <span><Icon icon="ets" /></span>
+        <div>
+            <span><Icon icon="bell" /></span>
+            <span><Icon icon="message" /></span>
+        </div>
+    </nav>
+    <div id="feed-content">
+        {
+            components.map((component) => (
+                <Post
+                    title={component.title}
+                    description={component.description}
+                    date={component.date}
+                />
+            ))
+        }
+    </div>
+</MainLayout>
+
+<style>
+    #feed-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        overflow-y: auto;
+    }
+
+    * {
+        color: black;
+    }
+
+    #feed {
+        flex: 1;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        height: 2rem;
+        position: sticky;
+        top: 0;
+        background-color: white;
+    }
+
+    nav > span:first-child {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    nav > div {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+</style>
