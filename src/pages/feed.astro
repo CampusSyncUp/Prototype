@@ -11,12 +11,10 @@ const components = [
     {
         title: "This is another post",
         description: "The feed will be like LinkedIn's feed.",
-        date: "2021-10-02",
     },
     {
         title: "This is a third post",
         description: "Users will share their projects, thoughts, and more.",
-        date: "2021-10-03",
     },
     {
         title: "This is a fourth post",
@@ -27,7 +25,7 @@ const components = [
 
 <MainLayout title="Feed">
     <nav>
-        <span><Icon icon="ets" /></span>
+        <span><Icon icon="logo-original" /></span>
         <div>
             <span><Icon icon="bell" /></span>
             <span><Icon icon="message" /></span>
@@ -39,7 +37,6 @@ const components = [
                 <Post
                     title={component.title}
                     description={component.description}
-                    date={component.date}
                 />
             ))
         }
@@ -56,10 +53,6 @@ const components = [
         overflow-y: auto;
     }
 
-    * {
-        color: black;
-    }
-
     #feed {
         flex: 1;
     }
@@ -70,7 +63,6 @@ const components = [
         height: 2rem;
         position: sticky;
         top: 0;
-        background-color: white;
     }
 
     nav > span:first-child {
