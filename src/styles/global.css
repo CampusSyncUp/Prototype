@@ -1,11 +1,39 @@
 :root {
-    --background-color: #e3022c;
-    --font-color: #fefefe;
+    color-scheme: light dark;
+
+    /* Colors */
+    --color-primary: light-dark(#67F498, #2D8C4E);
+    --color-secondary: light-dark(#BCD2FF, #4A66B8);
+    --color-tertiary: light-dark(#B894ED, #6A4BA5);
+    --color-quaternary: light-dark(#F25F6C, #A13A43);
+    --color-quinary: light-dark(#FC8FBE, #A54A73);
+    --color-senary: light-dark(#FFC196, #A56442);
+    --color-septenary: light-dark(#FEF198, #A39E40);
+    --color-error: red;
+    --color-success: green;
+
+    /* Typography */
+    --font-family: 'Roboto', sans-serif;
+    --font-size-heading: 2rem;
+    --font-size-title: 1.6rem;
+    --font-size-body: 1.1rem;
+
+    /* Spacing */
+    --spacing-small: 0.4rem;
+    --spacing-medium: 1.6rem;
+    --spacing-large: 3.2rem;
+
+    /* Curvature */
+    --border-radius-small: 0.4rem;
+    --border-radius-medium: 1.6rem;
+    --border-radius-large: 3.2rem;
+
+    /* Personalized elements */
+    --icon-size: 2rem;
 }
 
 * {
-    color: var(--font-color);
-    font-family: sans-serif;
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
     transition-duration: .5s;
@@ -18,7 +46,6 @@ a {
 
 body {
     align-items: center;
-    background-color: var(--background-color);
     display: flex;
     flex-direction: column;
     height: 100svh;
